@@ -101,7 +101,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void botonRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRankingActionPerformed
         // TODO add your handling code here:
-        
+        RankingMenu ranking = new RankingMenu();
+        ranking.setVisible(true);
+        ranking.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_botonRankingActionPerformed
 
     private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed

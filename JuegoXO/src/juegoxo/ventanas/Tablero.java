@@ -35,6 +35,9 @@ public class Tablero extends javax.swing.JFrame {
         
         MenuPrincipal principal = new MenuPrincipal();
         
+        Jugador.jugadorLog.setPartidas(1);
+        Jugador.jugadorLog2.setPartidas(1);
+        
         if (!juego.esValida(posicion)) {
             JOptionPane.showMessageDialog(this, "Movimiento Incorrecto! Intentelo de nuevo.");
             return;

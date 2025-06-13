@@ -35,7 +35,15 @@ public class Jugador {
 
     public int getPuntos() {
         return puntos;
-    }   
+    }
+    
+    public void setPartidas(int partidas) {
+        this.partidas += partidas;
+    }
+
+    public int getPartidas() {
+        return partidas;
+    }  
 
     public void setPassword(String password) {
         this.password = password;
@@ -43,14 +51,6 @@ public class Jugador {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setPartidas(int partidas) {
-        this.partidas = partidas;
-    }
-
-    public int getPartidas() {
-        return partidas;
     }
 
     public boolean validarPass(String pass) {
