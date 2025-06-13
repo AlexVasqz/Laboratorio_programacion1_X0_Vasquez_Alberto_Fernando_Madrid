@@ -10,7 +10,6 @@ public class JuegoXO {
         principal.setVisible(true);
         principal.setLocationRelativeTo(null);
         
-        ///12312wqdsqwdwadwqqwdqwdqw
     }
     
 }
