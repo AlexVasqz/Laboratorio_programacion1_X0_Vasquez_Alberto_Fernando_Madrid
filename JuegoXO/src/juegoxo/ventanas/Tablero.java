@@ -9,14 +9,14 @@ import java.util.Random;
 public class Tablero extends javax.swing.JFrame {
 
     private Posiciones juego = new Posiciones();
-    private boolean turnoJugador1; 
+    private boolean turnoJugador1;
     private Random random = new Random();
 
     public Tablero() {
         initComponents();
         setTitle("Juego X - 0");
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        
+
         turnoJugador1 = random.nextBoolean();
         actualizarLabelTurno();
 
@@ -32,47 +32,52 @@ public class Tablero extends javax.swing.JFrame {
     }
 
     private void manejarMovimiento(JButton boton, int posicion) {
+        
+        MenuPrincipal principal = new MenuPrincipal();
+        
         if (!juego.esValida(posicion)) {
             JOptionPane.showMessageDialog(this, "Movimiento Incorrecto! Intentelo de nuevo.");
             return;
         }
-       
+
         boton.setText(turnoJugador1 ? "X" : "O");
         juego.registrarMovimiento(posicion, turnoJugador1 ? 1 : 2);
 
         int ganador = juego.getGanador();
         if (ganador != 0) {
-            if (ganador == 1) { 
+            if (ganador == 1) {
                 if (Jugador.jugadorLog != null) {
-                  
+
                     Jugador.jugadorLog.setPuntos(Jugador.jugadorLog.getPuntos() + 1);
                     JOptionPane.showMessageDialog(this, "¡Ganó " + Jugador.jugadorLog.getUsername() + "!");
-                } else {
-                    JOptionPane.showMessageDialog(this, "¡Ganó el Jugador 1 (X)!");
+                    Jugador.jugadorLog.setPuntos(1);
+                    principal.setVisible(true);
+                    principal.setLocationRelativeTo(null);
+                    dispose();
                 }
-            } else { 
-                JOptionPane.showMessageDialog(this, "¡Ganó el Jugador 2 (O)!");
+            } else {
+                JOptionPane.showMessageDialog(this, "¡Ganó " + Jugador.jugadorLog2.getUsername() + "!");
+                Jugador.jugadorLog2.setPuntos(1);
+                principal.setVisible(true);
+                principal.setLocationRelativeTo(null);
+                dispose();
             }
-            return; 
+            return;
         }
 
         turnoJugador1 = !turnoJugador1;
         actualizarLabelTurno();
     }
-    
+
     private void actualizarLabelTurno() {
         if (turnoJugador1) {
-           
             if (Jugador.jugadorLog != null) {
                 turno.setText("Turno: " + Jugador.jugadorLog.getUsername());
-            } else {
-                turno.setText("Turno: Jugador 1 (X)");
             }
         } else {
             turno.setText("Turno: " + Jugador.jugadorLog2.getUsername());
         }
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

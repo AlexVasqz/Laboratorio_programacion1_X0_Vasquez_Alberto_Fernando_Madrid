@@ -30,7 +30,7 @@ public class Jugador {
     }
 
     public void setPuntos(int puntos) {
-        this.puntos = puntos;
+        this.puntos += puntos;
     }
 
     public int getPuntos() {
