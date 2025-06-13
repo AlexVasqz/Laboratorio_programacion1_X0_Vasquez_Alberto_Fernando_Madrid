@@ -1,10 +1,10 @@
 package juegoxo.eventos;
 
 public class Jugador {
-
-    public static int nUsuariosTotal = 0;
+    
     public static Jugador jugadorLog = null;
     public static boolean logged = false;
+    public static int UsuariosTotal = 0;
 
     public static Jugador[] jugadores = new Jugador[50];
 

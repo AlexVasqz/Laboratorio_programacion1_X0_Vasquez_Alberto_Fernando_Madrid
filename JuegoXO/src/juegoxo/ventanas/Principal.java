@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package juegoxo.ventanas;
 
-/**
- *
- * @author ricardomadrid
- */
 public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     */
     public Principal() {
         initComponents();
+        setTitle("Juego X - 0");
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     }
 
     /**
@@ -27,6 +18,9 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         titulo = new javax.swing.JLabel();
+        botonInicionSesion = new javax.swing.JButton();
+        botonRegistro = new javax.swing.JButton();
+        botonSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -34,13 +28,48 @@ public class Principal extends javax.swing.JFrame {
         titulo.setFont(new java.awt.Font("Kefa", 1, 36)); // NOI18N
         titulo.setText("Menu Principal");
 
+        botonInicionSesion.setFont(new java.awt.Font("ITF Devanagari", 1, 18)); // NOI18N
+        botonInicionSesion.setText("Iniciar Sesion");
+        botonInicionSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonInicionSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonInicionSesionActionPerformed(evt);
+            }
+        });
+
+        botonRegistro.setFont(new java.awt.Font("ITF Devanagari", 1, 18)); // NOI18N
+        botonRegistro.setText("Registro");
+        botonRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistroActionPerformed(evt);
+            }
+        });
+
+        botonSalir.setFont(new java.awt.Font("ITF Devanagari", 1, 18)); // NOI18N
+        botonSalir.setText("Salir");
+        botonSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addComponent(titulo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(titulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(208, 208, 208)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonInicionSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(172, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -48,11 +77,40 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(titulo)
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addGap(66, 66, 66)
+                .addComponent(botonInicionSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(botonRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
+        
+        Registro registro = new Registro();
+        registro.setVisible(true);
+        registro.setLocationRelativeTo(null);
+        dispose();
+        
+    }//GEN-LAST:event_botonRegistroActionPerformed
+
+    private void botonInicionSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicionSesionActionPerformed
+        // TODO add your handling code here:
+        InicioSesion sesion = new InicioSesion();
+        sesion.setVisible(true);
+        sesion.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_botonInicionSesionActionPerformed
+
+    private void botonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalirActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_botonSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +148,9 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonInicionSesion;
+    private javax.swing.JButton botonRegistro;
+    private javax.swing.JButton botonSalir;
     private javax.swing.JLabel titulo;
     // End of variables declaration//GEN-END:variables
 }
