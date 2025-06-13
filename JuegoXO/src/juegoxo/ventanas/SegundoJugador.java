@@ -1,19 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package juegoxo.ventanas;
 
 import javax.swing.JOptionPane;
 import juegoxo.eventos.Jugador;
+import juegoxo.ventanas.Tablero;
 
-public class InicioSesion extends javax.swing.JFrame {
+public class SegundoJugador extends javax.swing.JFrame {
 
-    MenuPrincipal principal = new MenuPrincipal();
+    Tablero tablero = new Tablero();
 
-    public InicioSesion() {
+    public SegundoJugador() {
         initComponents();
-        setTitle("Juego X - 0 | Iniciar Sesion");
+        setTitle("Juego X - 0 | Escoger Player");
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
     }
 
@@ -29,25 +26,25 @@ public class InicioSesion extends javax.swing.JFrame {
         titulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         user = new javax.swing.JTextField();
-        labelContraseña = new javax.swing.JLabel();
-        password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         titulo.setFont(new java.awt.Font("Kefa", 1, 36)); // NOI18N
-        titulo.setText("Iniciar Sesion");
+        titulo.setText("Segundo Jugador");
 
         jLabel1.setFont(new java.awt.Font("ITF Devanagari", 1, 14)); // NOI18N
-        jLabel1.setText("Nombre:");
+        jLabel1.setText("Usuario:");
 
-        labelContraseña.setFont(new java.awt.Font("ITF Devanagari", 1, 14)); // NOI18N
-        labelContraseña.setText("Contraseña:");
+        user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userActionPerformed(evt);
+            }
+        });
 
-        jButton1.setFont(new java.awt.Font("ITF Devanagari", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 204, 51));
+        jButton1.setFont(new java.awt.Font("Kefa", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 204, 0));
         jButton1.setText("Aceptar");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -56,8 +53,8 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("ITF Devanagari", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 51, 51));
+        jButton2.setFont(new java.awt.Font("Kefa", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 0, 0));
         jButton2.setText("Regresar");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -71,81 +68,84 @@ public class InicioSesion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(123, 123, 123)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelContraseña)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(titulo)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
+                        .addGap(79, 79, 79)
+                        .addComponent(titulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(124, Short.MAX_VALUE))
+                            .addComponent(jLabel1)
+                            .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(57, 57, 57)
                 .addComponent(titulo)
-                .addGap(32, 32, 32)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(labelContraseña)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(31, 31, 31)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
         boolean user_encontrado = false;
 
-        String pwd = new String(password.getPassword());
-
-        if (user.getText().equals("") || pwd.equals("")) {
+        if (user.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "No puedes dejar vacios los campos.");
         } else {
             for (int i = 0; i < Jugador.UsuariosTotal; i++) {
                 if (user.getText().equalsIgnoreCase(Jugador.jugadores[i].username)) {
-                    if (Jugador.jugadores[i].validarPass(pwd)) {
-                        JOptionPane.showMessageDialog(this, "Logeado correctamente como: " + user.getText() + "!");
-
+                    Jugador.jugadorLog2 = Jugador.jugadores[i];
+                    if (Jugador.jugadorLog2 != Jugador.jugadorLog) {
+                        JOptionPane.showMessageDialog(this, "Se escogio a" + user.getText() + " como contrincante.");
                         user_encontrado = true;
-                        Jugador.jugadorLog = Jugador.jugadores[i];
-                        Jugador.logged = true;
-                        principal.setVisible(true);
-                        principal.setLocationRelativeTo(null);
+                        tablero.setVisible(true);
+                        tablero.setLocationRelativeTo(null);
                         dispose();
                         return;
                     } else {
-                        JOptionPane.showMessageDialog(this, "Contraseña incorrecta");
+                        JOptionPane.showMessageDialog(this, "Tu contrincante no puede ser tu mismo.");
+                        user.setText("");
                         return;
                     }
                 }
             }
-            if (!user_encontrado) {
-                JOptionPane.showMessageDialog(this, "Usuario no encontrado");
-            }
+        }
+        if (!user_encontrado) {
+            JOptionPane.showMessageDialog(this, "Usuario no encontrado, intentelo denuevo.");
+            user.setText("");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        
+        MenuPrincipal principal = new MenuPrincipal();
         principal.setVisible(true);
         principal.setLocationRelativeTo(null);
         dispose();
+        
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -166,20 +166,20 @@ public class InicioSesion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SegundoJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SegundoJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SegundoJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SegundoJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InicioSesion().setVisible(true);
+                new SegundoJugador().setVisible(true);
             }
         });
     }
@@ -188,8 +188,6 @@ public class InicioSesion extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel labelContraseña;
-    private javax.swing.JPasswordField password;
     private javax.swing.JLabel titulo;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables

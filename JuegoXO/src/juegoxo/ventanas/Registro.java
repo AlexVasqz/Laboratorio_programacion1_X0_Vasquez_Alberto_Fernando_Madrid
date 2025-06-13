@@ -5,7 +5,7 @@ import juegoxo.eventos.Jugador;
 
 public class Registro extends javax.swing.JFrame {
 
-    Principal principal = new Principal();
+    MenuInicial principal = new MenuInicial();
     
     public Registro() {
         initComponents();

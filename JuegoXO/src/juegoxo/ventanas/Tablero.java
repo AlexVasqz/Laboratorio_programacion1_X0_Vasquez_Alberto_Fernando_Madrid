@@ -11,6 +11,8 @@ public class Tablero extends javax.swing.JFrame {
 
     public Tablero() {
         initComponents();
+        setTitle("Juego X - 0");
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 
         boton1.addActionListener(e -> manejarMovimiento(boton1, 0));
         boton2.addActionListener(e -> manejarMovimiento(boton2, 1));

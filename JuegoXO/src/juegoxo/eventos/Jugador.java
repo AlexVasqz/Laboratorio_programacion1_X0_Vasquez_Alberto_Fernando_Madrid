@@ -3,6 +3,7 @@ package juegoxo.eventos;
 public class Jugador {
     
     public static Jugador jugadorLog = null;
+    public static Jugador jugadorLog2 = null;
     public static boolean logged = false;
     public static int UsuariosTotal = 0;
 
