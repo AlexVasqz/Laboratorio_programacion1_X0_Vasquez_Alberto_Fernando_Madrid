@@ -14,8 +14,9 @@ public class Tablero extends javax.swing.JFrame {
 
     public Tablero() {
         initComponents();
+        setTitle("Juego X - 0");
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         
-       
         turnoJugador1 = random.nextBoolean();
         actualizarLabelTurno();
 
@@ -68,8 +69,7 @@ public class Tablero extends javax.swing.JFrame {
                 turno.setText("Turno: Jugador 1 (X)");
             }
         } else {
-           
-            turno.setText("Turno: Jugador 2 (O)");
+            turno.setText("Turno: " + Jugador.jugadorLog2.getUsername());
         }
     }
 
