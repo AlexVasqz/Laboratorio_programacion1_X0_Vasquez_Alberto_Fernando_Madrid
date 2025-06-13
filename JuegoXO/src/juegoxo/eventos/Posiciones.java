@@ -13,29 +13,29 @@ public class Posiciones {
             botonesUsados[posicion] = jugador; // 1 = X, 2 = O
         }
     }
+    
+    public void reiniciar() {
+        for (int i = 0; i < botonesUsados.length; i++) {
+            botonesUsados[i] = 0;
+        }
+    }
 
     public int getGanador() {
         int[][] combinaciones = {
-            {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // filas
-            {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // columnas
-            {0, 4, 8}, {2, 4, 6} // diagonales
+            {0, 1, 2}, {3, 4, 5}, {6, 7, 8},
+            {0, 3, 6}, {1, 4, 7}, {2, 5, 8},
+            {0, 4, 8}, {2, 4, 6}
         };
 
         for (int[] c : combinaciones) {
             int a = botonesUsados[c[0]];
             int b = botonesUsados[c[1]];
-            int cVal = botonesUsados[c[2]];
-            if (a != 0 && a == b && b == cVal) {
-                return a; // devuelve 1 o 2
+            int valorColumna = botonesUsados[c[2]];
+            if (a != 0 && a == b && b == valorColumna) {
+                return a; // devuelve el ganador
             }
         }
 
         return 0; // sin ganador
-    }
-
-    public void reiniciar() {
-        for (int i = 0; i < botonesUsados.length; i++) {
-            botonesUsados[i] = 0;
-        }
     }
 }

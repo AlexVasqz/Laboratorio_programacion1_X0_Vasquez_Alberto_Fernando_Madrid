@@ -32,6 +32,7 @@ public class Tablero extends javax.swing.JFrame {
 
     private void manejarMovimiento(JButton boton, int posicion) {
         if (!juego.esValida(posicion)) {
+            JOptionPane.showMessageDialog(this, "Movimiento Incorrecto! Intentelo de nuevo.");
             return;
         }
        
