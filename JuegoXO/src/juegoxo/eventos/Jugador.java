@@ -35,7 +35,7 @@ public class Jugador {
 
     public int getPuntos() {
         return puntos;
-    }
+    }   
 
     public void setPassword(String password) {
         this.password = password;

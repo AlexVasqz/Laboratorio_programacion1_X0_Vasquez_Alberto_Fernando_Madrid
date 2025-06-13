@@ -3,16 +3,21 @@ package juegoxo.ventanas;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import juegoxo.eventos.Posiciones;
+import juegoxo.eventos.Jugador;
+import java.util.Random;
 
 public class Tablero extends javax.swing.JFrame {
 
     private Posiciones juego = new Posiciones();
-    private boolean turnoX = true; // true = X, false = O
+    private boolean turnoJugador1; 
+    private Random random = new Random();
 
     public Tablero() {
         initComponents();
-        setTitle("Juego X - 0");
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        
+       
+        turnoJugador1 = random.nextBoolean();
+        actualizarLabelTurno();
 
         boton1.addActionListener(e -> manejarMovimiento(boton1, 0));
         boton2.addActionListener(e -> manejarMovimiento(boton2, 1));
@@ -30,17 +35,44 @@ public class Tablero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Movimiento Incorrecto! Intentelo de nuevo.");
             return;
         }
-
-        boton.setText(turnoX ? "X" : "O");
-        juego.registrarMovimiento(posicion, turnoX ? 1 : 2);
+       
+        boton.setText(turnoJugador1 ? "X" : "O");
+        juego.registrarMovimiento(posicion, turnoJugador1 ? 1 : 2);
 
         int ganador = juego.getGanador();
         if (ganador != 0) {
-            JOptionPane.showMessageDialog(this, "Ganó el jugador " + (ganador == 1 ? "X" : "O"));
+            if (ganador == 1) { 
+                if (Jugador.jugadorLog != null) {
+                  
+                    Jugador.jugadorLog.setPuntos(Jugador.jugadorLog.getPuntos() + 1);
+                    JOptionPane.showMessageDialog(this, "¡Ganó " + Jugador.jugadorLog.getUsername() + "!");
+                } else {
+                    JOptionPane.showMessageDialog(this, "¡Ganó el Jugador 1 (X)!");
+                }
+            } else { 
+                JOptionPane.showMessageDialog(this, "¡Ganó el Jugador 2 (O)!");
+            }
+            return; 
         }
 
-        turnoX = !turnoX;
+        turnoJugador1 = !turnoJugador1;
+        actualizarLabelTurno();
     }
+    
+    private void actualizarLabelTurno() {
+        if (turnoJugador1) {
+           
+            if (Jugador.jugadorLog != null) {
+                turno.setText("Turno: " + Jugador.jugadorLog.getUsername());
+            } else {
+                turno.setText("Turno: Jugador 1 (X)");
+            }
+        } else {
+           
+            turno.setText("Turno: Jugador 2 (O)");
+        }
+    }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
