@@ -52,8 +52,8 @@ public class RankingMenu extends javax.swing.JFrame {
                         .addComponent(titulo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(107, 107, 107)
-                        .addComponent(ranking, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(127, Short.MAX_VALUE))
+                        .addComponent(ranking, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -61,8 +61,8 @@ public class RankingMenu extends javax.swing.JFrame {
                 .addGap(82, 82, 82)
                 .addComponent(titulo)
                 .addGap(84, 84, 84)
-                .addComponent(ranking, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(324, Short.MAX_VALUE))
+                .addComponent(ranking, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();

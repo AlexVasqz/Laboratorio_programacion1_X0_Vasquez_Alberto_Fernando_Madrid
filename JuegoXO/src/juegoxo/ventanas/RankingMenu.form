@@ -31,10 +31,10 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-                      <Component id="ranking" min="-2" pref="426" max="-2" attributes="0"/>
+                      <Component id="ranking" min="-2" pref="442" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="127" max="32767" attributes="0"/>
+              <EmptySpace pref="111" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,8 +44,8 @@
               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               <Component id="titulo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-              <Component id="ranking" min="-2" pref="28" max="-2" attributes="0"/>
-              <EmptySpace pref="324" max="32767" attributes="0"/>
+              <Component id="ranking" min="-2" pref="316" max="-2" attributes="0"/>
+              <EmptySpace pref="36" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
